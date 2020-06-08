@@ -23,12 +23,12 @@ print(total)
 print('Element 3,2')
 
 x <- total[3,2] # or
-
 x <- total[3,'city2']
-
 print(x)
 
-print(total[ c(3,2) ,  c(1,1) ])
+# Take a block from the original matrix
+block1 = total[ c(2,3,4,5,10) ,  c('city1','city2')]
+print( block1 )
 
 # selecting a whole field
 City = total[,'city1']
