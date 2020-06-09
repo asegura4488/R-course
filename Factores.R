@@ -1,22 +1,25 @@
 
+library(plyr)
 print('--- Runnnig ---')
 
 tallas <- c('m','l','m','M','s','M','M','S','l','l')
 
+# factor
 fac_tallas <- factor(tallas)
+fac_tallas <- revalue(fac_tallas, c('M'='m', 'S'='s'))
 
 # levels
+levels_ta <- levels(fac_tallas)
+print(levels_ta)
 
-lev_tallas <- levels(fac_tallas)
-print(lev_tallas) 
+#Ordenar de s a l 
+fac_tallas <- factor(fac_tallas, 
+	ordered = TRUE,
+	levels=c('l','m','s'),
+	labels=c('s','m','l'))
 
-
-fac1_tallas <- factor(tallas, ordered=TRUE, levels=c("l","m","M","s","S"),labels=c("s","S","m","M","l"))
-print(fac1_tallas)
-
+print(levels(fac_tallas))
 
 pdf("PlotFactor.pdf")
-
-plot(fac1_tallas, main='Factors', xlab='Tallas', ylab='Frecuencies')
-
+plot(fac_tallas, main='Factors', xlab='Tallas', ylab='Frecuencies')
 dev.off()
