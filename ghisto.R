@@ -22,5 +22,5 @@ pdf("gplotTemp.pdf")
 ggplot(	data = df,
 		mapping = aes(x=TEMP, fill=factor(MES))) +
 		geom_histogram(bins = 50, position = 'identity', alpha = 0.8)+
-		labs(title = 'titulo', fill='MES', x='Temperatura', y='Conteo')
+		labs(title = 'Temperatura por mes', fill='MES', x='Temperatura', y='Conteo')
 dev.off()
