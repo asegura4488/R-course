@@ -33,8 +33,9 @@ ggplot(	data = df,
  		geom_line()   
 
 ggplot(	data = df,
-		mapping = aes(x=AÑO, y=TEMP, fill=factor(MES)))+
-		geom_boxplot()
+		mapping = aes(x=MES, y=TEMP, fill=factor(MES)))+
+		geom_boxplot()+
+		geom_jitter()
 
 
 dev.off()
